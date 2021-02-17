@@ -26,7 +26,6 @@ router.get('/',auth,
 // @ROUTE   POST api/auth
 // @desc    Authenticate user & get Token
 // @access  Public
-
 router.post('/', [
         check('email','please include a valid email').isEmail(),
         check('password','Password is required')
@@ -72,9 +71,7 @@ router.post('/', [
         } catch(err){
             console.error(err.message);
             res.status(500).send('Server Error!')
-
         }
-
     });
 
 module.exports = router;
