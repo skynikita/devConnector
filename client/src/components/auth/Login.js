@@ -22,7 +22,7 @@ const Login = () => {
     return (
         <Fragment>
             <h1 className="large text-primary">Sign In</h1>
-            <p className="lead"><i className="fas fa-user"></i> Sign Into Your Account</p>
+            <p className="lead"><i className="fas fa-user" /> Sign Into Your Account</p>
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
                     <input type="email" placeholder="Email Address" name="email" value={email}
