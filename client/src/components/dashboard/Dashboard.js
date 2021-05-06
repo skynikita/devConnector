@@ -36,14 +36,8 @@ Dashboard.prototype = {
 }
 
 const mapStateToProps = state => ({
-
     auth: state.auth,
     profile: state.profile
-
-
-
-
-
 })
 
 
