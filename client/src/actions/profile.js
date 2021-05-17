@@ -21,6 +21,7 @@ export const getCurrentProfile = () => async dispatch => {
             payload: res.data
         })
     }catch(err){
+        dispatch({ type: CLEAR_PROFILE });
         dispatch({
             type: PROFILE_ERROR,
             payload: {msg: err.response.statusText, status: err.response.status}
@@ -106,6 +107,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
         }
     }catch(err){
         const errors = err.response.data.errors;
+        console.log('err',errors)
         if(errors){
             errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
         }
