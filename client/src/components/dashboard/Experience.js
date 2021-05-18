@@ -5,14 +5,15 @@ import moment from "moment";
 import {deleteExperience} from "../../actions/profile";
 
 const Experience = ({experience, deleteExperience}) =>{
-    const experiences = experience.map(exp => (
+    console.log(experience)
+    const experiences = experience?.map(exp => (
         <tr key={exp._id}>
             <td>{exp.company}</td>
             <th className="hide-sm">{exp.title}</th>
             <td>
-                {moment(exp.from).format('YYYY/MM/DD')} - {''}
+                {moment(exp.from).format('DD/MM/YYYY')} - {''}
                 {exp.to === null ? ('Now') : (
-                    moment(exp.to).format('YYYY/MM/DD')
+                    moment(exp.to).format('DD/MM/YYYY')
                 )}
             </td>
             <td>

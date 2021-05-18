@@ -1,11 +1,14 @@
 import React, {Fragment, useState} from 'react'
-import{Link,withRouter} from 'react-router-dom'
+import{Link,withRouter,useHistory} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import {createProfile} from "../../actions/profile";
 import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
+import profile from "../../reducers/profile";
+
 
 const CreateProfile = ({createProfile, history}) => {
+
     const [formData, setFormData] = useState({
         company:'',
         website:'',
@@ -42,7 +45,7 @@ const CreateProfile = ({createProfile, history}) => {
 
     const onSubmit = e => {
         e.preventDefault();
-        createProfile(formData, history)
+        createProfile(formData, history, !!profile)
     }
 
     return (
